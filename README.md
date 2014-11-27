@@ -11,5 +11,5 @@ Use **MATLAB R2014a** for testing algorithms.
 
 * **Add comments** wherever necessary.
 * Before starting your work, make sure you **pull all changes** from the repository using
-       return shell_exec("git pull --all");
+    git pull --all
 * Ensure **code readability**.
