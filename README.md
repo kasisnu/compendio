@@ -4,7 +4,7 @@ The official repository for the project "**Extraction of selected text from scan
 
 ## Set up
 
-Use **MATLAB R2014a** for testing algorithms.
+Find server side code in **py-scripts**
 
 
 ## Contribution guidelines 
