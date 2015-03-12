@@ -1,4 +1,4 @@
-NOTE: This file was edited in Sublime Text. You might get formatting errors in Notepad.
+NOTE: Dependencies have been checked only on Ubuntu 14.04 LTS
 
 Setup Instructions for OpenCV on Ubuntu:
 
