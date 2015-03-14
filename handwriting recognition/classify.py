@@ -81,8 +81,9 @@ for (c, _) in cnts:
 		# draw a rectangle around the digit, the show what the
 		# digit was classified as
 		cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 1)
-		cv2.putText(image, str(digit), (x - 10, y - 10),
+		cv2.putText(image, str(digit), (x - 20, y),
 			cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
 		cv2.imshow("image", image)
 
+cv2.imwrite("example.jpg", image)
 cv2.waitKey(0)
