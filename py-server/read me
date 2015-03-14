@@ -1,0 +1,52 @@
+Okay soo the Django tutorial link is: 
+https://docs.djangoproject.com/en/1.6/intro/tutorial01/
+But don't attempt to read it now, I will explain in breif
+
+The link in which Image is send from andriod app to Django server is: 
+1. http://stackoverflow.com/questions/8447299/upload-a-file-with-android-to-django-web-service
+2. http://stackoverflow.com/questions/2935946/sending-images-using-http-post
+3. http://stackoverflow.com/questions/9758982/android-django-image-upload
+
+I used the first link and removed the error causing codes for now, once basic system is made, We will try to add more code related to contrainsts and security (which I have removed for now) to make the system robust.
+
+
+Following are the steps which I have followed for the installation.
+
+
+Steps for Django....
+
+1.Python :
+	Already installed in ubuntu
+2.Python setup tools :
+	apt-get install python-setuptools
+3.SQLite (Optional , if database needed): 
+	sudo apt-get install sqlite
+
+
+
+4. Checks versions of all:
+	Python: python --version
+	SQLite: sqlite -version
+	Django: python -c "import django; print(django.get_version())"
+
+
+
+Do the above steps, rest follow the next steps after you get basic idea of Django (After briefing of Django)...
+The below steps are used for project creation which I have aleady send you....
+To run the below project, Just go to directory with manage.py file and follow step 6.
+There is also a html page, use it to try uploading an Image. Leave step 5,7,8 for now.
+
+
+5. Create project  :
+	Go to location where you wanna store the project and run:
+	django-admin startproject ImageAnalyser
+
+6. Test the project by running the manage.py file as:
+	python manage.py runserver
+
+7. After the above test, stop the server and create an app in your project:
+	python manage.py startapp ImageProcess
+
+
+8. Sync Database after creating the model of the app (Model and Database in this app is not needed):
+	python manage.py syncdb
