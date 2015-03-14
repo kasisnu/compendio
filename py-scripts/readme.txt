@@ -26,4 +26,20 @@ NOTE: Enter Y whenever prompted about package installation
 
 	$ sudo apt-get -f install
 
-6. Done!
+
+Now, we have installed all dependencies for Tesseract OCR,
+and are going to install the dependencies for handwriting recognition.
+
+1.	$ sudo pip install -U networkx
+
+2.	$ sudo pip install -U scikit-image
+
+3.	$ pip install --user --install-option="--prefix=" -U scikit-learn
+
+Done!
+
+
+
+
+
+
