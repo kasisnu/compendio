@@ -49,7 +49,7 @@ edged = cv2.Canny(cropped, 30, 150)
 
 # sort the contours by their x-axis position, ensuring
 # that we read the numbers from left to right
-cnts = sorted([(c, cv2.boundingRect(c)[0]) for c in cnts], key = lambda x: x[1])
+cnts = sorted([(c, cv2.boundingRect(c)[1]) for c in cnts], key = lambda x: x[1])
 
 # loop over the contours
 for (c, _) in cnts:
@@ -71,8 +71,6 @@ for (c, _) in cnts:
 		thresh = dataset.deskew(thresh, 20)
 		thresh = dataset.center_extent(thresh, (20, 20))
 
-		cv2.imshow("thresh", thresh)
-
 		# extract features from the image and classify it
 		hist = hog.describe(thresh)
 		digit = model.predict(hist)[0]
@@ -85,5 +83,4 @@ for (c, _) in cnts:
 			cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
 		cv2.imshow("image", image)
 
-cv2.imwrite("example.jpg", image)
 cv2.waitKey(0)
