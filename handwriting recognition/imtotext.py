@@ -1,8 +1,6 @@
 # Basic Full Page OCR generating HTML
 
 import tesseract
-#import ctypes
-#import os
 
 class OCR:
 	def __init__(self):
