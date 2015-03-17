@@ -1,12 +1,10 @@
-# USAGE
-# python final.py --model models/svm.cpickle --image images/deskew_marked_text.jpg
+
 
 from imtotext import OCR
 from classifier import EYE
 from itertools import izip
 from pyimagesearch import imutils
 import cv2
-import argparse
 
 
 def pairwise(iterable):
@@ -45,20 +43,10 @@ def listToText(results):
 		s += '\n\n'
 	return s
 
-def main():
+def getText(image):
 	
-	# parse command line arguments
-	ap = argparse.ArgumentParser()
-	ap.add_argument("-m","--model",required = True,
-		help = "Path to the model pickle file")
-	ap.add_argument("-i","--image",required = True,
-		help = "Path to the image file")
-	args = vars(ap.parse_args())
-
 	# initialize the classifier
-	eye = EYE(args["model"])
-
-	image = args["image"]
+	eye = EYE("models/svm.cpickle")
 
 	# load the image and convert it to grayscale
 	image = cv2.imread(image)
@@ -69,23 +57,15 @@ def main():
 	elif image.shape[0] > 1000:
 		image = imutils.resize(image, height = 1000)
 
-	cv2.imshow("Original",image)
 
 	# get list of tuples(<digit>,<contour>) from digit classifier
 	markers = eye.getMarkers(image)
 
 	# check if markers are valid
 	markersValid = True
-	print "Marker pairs:"
-	for pair in pairwise(markers):
-		# the second digit must be 0, to define the end of a bullet point
-		print "%d, %d" % (pair[0][0],pair[1][0])
-		#if pair[1][0] != 0:
-		#	markersValid = False
-		#	break
 
 	if not markersValid:
-		print "Markers are not valid. The script will now exit."
+		return "Markers are not valid. The script will now exit."
 
 	else:
 		# Initialize OCR, and store the results in a list. 
@@ -98,7 +78,6 @@ def main():
 			(x2, y2, w2, h2) = cv2.boundingRect(stopMarker[1])
 
 			cropped = image[y1-(h1/2):y2+h2,x1+(w1+w2)/2:]
-			cv2.imshow(str(digit),cropped)
 			cv2.imwrite("cropped.png",cropped)
 			text = ocr.convert("cropped.png")
 			text = stripText(text)
@@ -108,8 +87,4 @@ def main():
 
 		# convert the results list to notes
 		text = listToText(results)
-		print text
-
-	cv2.waitKey(0)
-if __name__ == '__main__':
-  main()
+		return text
