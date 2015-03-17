@@ -4,7 +4,7 @@ The official repository for the project "**Extraction of selected text from scan
 
 ## Set up
 
-Find server side code in **py-scripts**
+Find server side code in **handwriting recognition**. For installation instructions, read the README in **py-scripts**.
 
 
 ## Contribution guidelines 
