@@ -42,7 +42,7 @@ There is also a html page, use it to try uploading an Image. Leave step 5,7,8 fo
 	django-admin startproject ImageAnalyser
 
 6. Test the project by running the manage.py file as:
-	python manage.py runserver
+	python manage.py runserver 0.0.0.0:8000
 
 7. After the above test, stop the server and create an app in your project:
 	python manage.py startapp ImageProcess
