@@ -44,7 +44,7 @@ class EYE:
 			(x, y, w, h) = cv2.boundingRect(c)
 
 			# if the width is at least 4 pixels and the height
-			# is at least 20 pixels, the contour is likely a digit
+			# is at lea
 			if w >= 4 and h >= 20:
 				# crop the ROI and then threshold the grayscale
 				# ROI to reveal the digit
