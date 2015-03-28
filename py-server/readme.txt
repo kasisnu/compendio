@@ -22,7 +22,8 @@ Steps for Django....
 3.SQLite (Optional , if database needed): 
 	sudo apt-get install sqlite
 
-
+NOTE: Install django using the official repository (Ubuntu 14.04 LTS)
+	$ sudo apt-get install python-django
 
 4. Checks versions of all:
 	Python: python --version
