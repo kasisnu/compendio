@@ -1,3 +1,0 @@
-g++ -I/usr/local/include -I/usr/local/include/tesseract -I/usr/local/include/leptonica tesseractmain.cpp -ltesseract -o tess
-
-Refer:https://opencv-code.com/tutorials/how-to-integrate-tesseract-ocr-and-opencv/
