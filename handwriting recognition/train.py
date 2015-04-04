@@ -1,4 +1,4 @@
-k# USAGE
+# USAGE
 # python train.py --dataset data/digits.csv --model models/svm.cpickle
 
 # import the necessary packages
